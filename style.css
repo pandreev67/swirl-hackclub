@@ -1,10 +1,38 @@
+:root {
+  --bg-color: #1e1e1f;
+  --text-color: #ffffff;
+  --footer-bg: #3c3c3c;
+  --border-color: #ffffff;
+}
+
+[data-theme="light"] {
+  --bg-color: #f5f5f5;
+  --text-color: #1e1e1f;
+  --footer-bg: #dcdcdc;
+  --border-color: #1e1e1f;
+}
+
+html {
+  height: 100%;
+}
+
 body {
-  background-color: #1e1e1f;
-  color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
   line-height: 1.6;
   text-align: center;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page {
+  flex: 1;
   max-width: 600px;
   margin: 40px auto;
   padding: 0 20px;
@@ -15,13 +43,16 @@ h1 {
   font-weight: normal;
   font-size: 64px;
   margin-bottom: 20px;
+  color: var(--text-color);
 }
 
 img {
+  display: block;
   width: 100%;
   max-width: 300px;
   box-sizing: border-box;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--border-color);
+  margin: 24px auto 0;
 }
 
 ul {
@@ -35,22 +66,150 @@ li {
 
 hr {
   border: none;
-  border-top: 2px solid #ffffff;
+  border-top: 2px solid var(--border-color);
   margin: 30px 0;
 }
 
 a {
-  color: #3c3c3c;
+  color: var(--text-color);
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 18px;
+  margin: 6px;
+  border: 2px solid var(--border-color);
+  border-radius: 999px;
+  transition: box-shadow 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
 }
 
 a:hover {
-  color: #ffffff;
+  color: var(--bg-color);
+  background-color: var(--text-color);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 28px rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
 }
 
 nav a {
-  margin: 0 81px;
+  margin: 0 12px;
 }
 
 footer {
   font-size: 16px;
+  background-color: var(--footer-bg);
+  padding: 16px 0;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+footer a {
+  color: var(--text-color);
+  border: none;
+  padding: 0 12px;
+  margin: 0;
+  border-radius: 0;
+}
+
+footer a:hover {
+  color: var(--text-color);
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transform: none;
+}
+
+/* Button styles */
+.car-button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  padding: 8px 18px;
+  margin: 6px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.car-button:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 28px rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.car-button:active {
+  transform: translateY(0);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--text-color);
+  color: var(--bg-color);
+  border: 2px solid var(--text-color);
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+  z-index: 1000;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.theme-toggle:hover {
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Spec table styles */
+.spec-table {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+.spec-table tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spec-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.spec-table td {
+  text-align: right;
+  padding: 12px 16px;
+  color: var(--text-color);
+}
+
+.spec-table tr:last-child {
+  border-bottom: none;
+}
+/* Add this to your style.css */
+.content h2 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 20px;
+  color: var(--text-color);
+}
+
+.content ul {
+  list-style-type: disc; /* Shows nice bullets */
+  margin-top: 10px;
+  text-align: left; /* Aligns text to the left */
+  display: inline-block; /* Keeps it centered */
+  padding-left: 20px; /* Indents the bullets */
+}
+
+.content ul li {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: var(--text-color);
 }
