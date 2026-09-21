@@ -1,215 +1,126 @@
 :root {
   --bg-color: #1e1e1f;
   --text-color: #ffffff;
-  --footer-bg: #3c3c3c;
+  --footer-bg: #2b2b2c;
   --border-color: #ffffff;
+  --hover-bg: #ffffff;
+  --hover-text: #1e1e1f;
 }
-
 [data-theme="light"] {
-  --bg-color: #f5f5f5;
-  --text-color: #1e1e1f;
-  --footer-bg: #dcdcdc;
-  --border-color: #1e1e1f;
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --footer-bg: #e5e5e5;
+  --border-color: #111111;
+  --hover-bg: #111111;
+  --hover-text: #ffffff;
 }
-
-html {
-  height: 100%;
-}
-
+html { height: 100%; }
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: "Quicksand", sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
   text-align: center;
   min-height: 100%;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .page {
   flex: 1;
   max-width: 600px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: 30px auto;
+  padding: 0 15px;
 }
-
 h1 {
-  font-family: "Jim Nightshade", cursive;
-  font-weight: normal;
-  font-size: 64px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
   color: var(--text-color);
 }
-
-img {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  box-sizing: border-box;
-  border: 2px solid var(--border-color);
-  margin: 24px auto 0;
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 25px;
+  color: var(--text-color);
 }
-
 ul {
-  display: inline-block;
   text-align: left;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-hr {
-  border: none;
-  border-top: 2px solid var(--border-color);
-  margin: 30px 0;
-}
-
-a {
-  color: var(--text-color);
-  text-decoration: none;
   display: inline-block;
-  padding: 8px 18px;
-  margin: 6px;
-  border: 2px solid var(--border-color);
-  border-radius: 999px;
-  transition: box-shadow 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+  padding-left: 20px;
+  list-style-type: disc;
 }
-
-a:hover {
-  color: var(--bg-color);
-  background-color: var(--text-color);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 28px rgba(255, 255, 255, 0.45);
-  transform: translateY(-2px);
-}
-
-nav a {
-  margin: 0 12px;
-}
-
-footer {
-  font-size: 16px;
-  background-color: var(--footer-bg);
-  padding: 16px 0;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-footer a {
-  color: var(--text-color);
-  border: none;
-  padding: 0 12px;
-  margin: 0;
-  border-radius: 0;
-}
-
-footer a:hover {
-  color: var(--text-color);
-  background-color: transparent;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-  transform: none;
-}
-
-/* Button styles */
-.car-button {
-  background-color: transparent;
-  color: var(--text-color);
-  border: 2px solid var(--border-color);
-  padding: 8px 18px;
-  margin: 6px;
-  border-radius: 999px;
-  font-size: 18px;
-  font-family: "Quicksand", sans-serif;
-  cursor: pointer;
-  transition: box-shadow 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
-}
-
-.car-button:hover {
-  background-color: var(--text-color);
-  color: var(--bg-color);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 28px rgba(255, 255, 255, 0.45);
-  transform: translateY(-2px);
-}
-
-.car-button:active {
-  transform: translateY(0);
-}
-
-/* Theme toggle button */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--text-color);
-  color: var(--bg-color);
-  border: 2px solid var(--text-color);
-  padding: 8px 16px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 16px;
-  font-family: "Quicksand", sans-serif;
-  z-index: 1000;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.theme-toggle:hover {
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
-  transform: translateY(-2px);
-}
-
-/* Spec table styles */
+li { margin-bottom: 8px; }
 .spec-table {
   width: 100%;
   max-width: 400px;
-  margin: 30px auto;
+  margin: 20px auto;
   border-collapse: collapse;
-  background-color: transparent;
 }
-
-.spec-table tr {
-  border-bottom: 1px solid var(--border-color);
-}
-
-.spec-table th {
-  text-align: left;
-  padding: 12px 16px;
-  font-weight: bold;
-  color: var(--text-color);
-}
-
-.spec-table td {
-  text-align: right;
-  padding: 12px 16px;
-  color: var(--text-color);
-}
-
-.spec-table tr:last-child {
-  border-bottom: none;
-}
-/* Add this to your style.css */
-.content h2 {
-  font-family: "Quicksand", sans-serif;
-  font-weight: bold;
-  font-size: 24px;
+.spec-table tr { border-bottom: 1px solid var(--border-color); }
+.spec-table th { text-align: left; padding: 8px 12px; font-weight: bold; }
+.spec-table td { text-align: right; padding: 8px 12px; }
+.spec-table tr:last-child { border-bottom: none; }
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
   margin-top: 20px;
+}
+.image-gallery img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border: 1px solid var(--border-color);
+}
+.car-button {
+  display: inline-block;
+  background-color: transparent;
   color: var(--text-color);
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  margin: 6px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 0;
 }
-
-.content ul {
-  list-style-type: disc; /* Shows nice bullets */
-  margin-top: 10px;
-  text-align: left; /* Aligns text to the left */
-  display: inline-block; /* Keeps it centered */
-  padding-left: 20px; /* Indents the bullets */
+.car-button:hover {
+  background-color: var(--hover-bg);
+  color: var(--hover-text);
 }
-
-.content ul li {
-  margin-bottom: 8px;
-  font-size: 18px;
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  z-index: 1000;
+}
+.theme-toggle:hover {
+  background-color: var(--hover-bg);
+  color: var(--hover-text);
+}
+footer {
+  font-size: 14px;
+  background-color: var(--footer-bg);
+  padding: 12px 0;
+  text-align: center;
+}
+footer a {
+  color: var(--text-color);
+  text-decoration: underline;
+  padding: 0 10px;
+}
+footer a:hover {
   color: var(--text-color);
 }

@@ -2,20 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="The Dodge Challenger SRT Demon 170 - ultimate muscle car with 1,025 hp and 1.66 second 0-60 time.">
+  <meta name="description" content="Dodge Challenger SRT Demon 170 specs.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Dodge Challenger SRT Demon 170</title>
+  <title>Dodge Challenger SRT Demon 170</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏎️</text></svg>">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
 </head>
 <body>
-  <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+  <button id="themeToggle" class="theme-toggle"> Dark Mode</button>
 
   <div class="container page">
     <div class="content">
-      <h1>The Dodge Challenger SRT Demon 170</h1>
-      <p>The Dodge Challenger SRT Demon 170 is my absolute favorite car because it is the ultimate expression of what a muscle car should be—a flawless blend of raw power, aggressive styling, and daily usability.</p>
+      <h1>Challenger SRT Demon 170</h1>
       
+      <p><strong>Why I like it:</strong> I love the car because of the insane power and its ability to tear down the quarter-mile in under nine seconds right out of the box.
       <table class="spec-table">
         <tr>
           <th>Engine</th>
@@ -34,39 +40,23 @@
           <td>168 mph</td>
         </tr>
       </table>
+
+      <div class="image-gallery">
+        <img src="img/dodge-burnout.jpg" alt="Dodge Challenger burnout">
+        <img src="img/dodge-rear.png" alt="Dodge Challenger rear view">
+      </div>
       
-      <button onclick="window.location.href='index.html'" class="car-button">Home Page</button>
-      
-      <img src="dodge-burnout.jpg" alt="dodge challenger">
+      <br>
+      <a href="index.html" class="car-button">Back to Garage</a>
     </div>
   </div>
 
   <footer>
     <a href="https://swirl.hackclub.com/">Hack Club Swirl</a>
     <a href="https://github.com/pandreev67/swirl-hackclub">GitHub</a>
+    <a href="mailto:Andreev.p@iss.ac.th">Email</a>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-
-    // Check saved theme
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-    updateButtonText(savedTheme);
-
-    toggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateButtonText(newTheme);
-    });
-
-    function updateButtonText(theme) {
-      toggle.textContent = theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode';
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

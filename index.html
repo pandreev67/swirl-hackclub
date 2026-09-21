@@ -2,62 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Discover my favorite cars: the brutal Dodge Challenger SRT Demon 170 and the agile McLaren 720S.">
+  <meta name="description" content="Two cars. One garage. The Dodge Challenger SRT Demon 170 and the McLaren 720S.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Favorite Cars</title>
+  <title>My Garage</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏎️</text></svg>">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
 </head>
 <body>
-  <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
-
+  <button id="themeToggle" class="theme-toggle"> Dark Mode</button>
   <div class="container page">
     <div class="content">
-      <h1>My Favorite Cars</h1>
-      <p>My favorite cars are the Dodge Challenger Demon 170 for its brutal, mind-bending drag strip power, and the McLaren 720S for its breathtaking, lightweight track agility.</p>
-
-      <!-- Moved List HERE, below the intro paragraph -->
-      <h2>Why I Love Them</h2> 
-      <ul>
-        <li>Dodge Challenger: Raw power and drag strip dominance</li>
-        <li>McLaren 720S: Lightweight agility and track precision</li>
-        <li>Both: Perfect blend of speed and style</li>
-      </ul>
-
-      <button onclick="window.location.href='dodge-challenger.html'" class="car-button">Dodge Challenger</button>
-      <button onclick="window.location.href='mclaren-720s.html'" class="car-button">McLaren 720S</button>
-      
-      <img src="f1-blueprint.png" alt="F1 car blueprint">
+      <h1>My dream garage</h1>
+      <p>My favorite cars are the Dodge Challenger SRT Demon 170 and the McLaren 720S.</p>
+      <div class="button-group">
+        <a href="dodge-challenger.html" class="car-button">Dodge Challenger</a>
+        <a href="mclaren-720s.html" class="car-button">McLaren 720S</a>
+      </div>
     </div>
   </div>
-
   <footer>
     <a href="https://swirl.hackclub.com/">Hack Club Swirl</a>
     <a href="https://github.com/pandreev67/swirl-hackclub">GitHub</a>
-    <a href="mailto:Andreev.p@iss.ac.th"> Email Me</a>
+    <a href="mailto:Andreev.p@iss.ac.th">Email</a>
   </footer>
-
-  <script>
-    const toggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-
-
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-    updateButtonText(savedTheme);
-
-    toggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateButtonText(newTheme);
-    });
-
-    function updateButtonText(theme) {
-      toggle.textContent = theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode';
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
